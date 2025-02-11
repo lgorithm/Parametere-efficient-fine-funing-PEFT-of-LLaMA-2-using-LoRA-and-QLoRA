@@ -1,4 +1,4 @@
-# Parameter efficient fine funing(PEFT) of LLaMA-2 using LoRA and QLoRA
+# Parameter-Efficient Fine-Tuning(PEFT) of LLaMA-2 using LoRA and QLoRA
 
 ## Overview
 
@@ -28,7 +28,8 @@ Modify the dataset path or use a Hugging Face dataset:
 
 ```python
 from datasets import load_dataset
-dataset = load_dataset("your_conversation_dataset")
+dataset_name = "mlabonne/guanaco-llama2-1k"
+dataset = load_dataset(dataset_name)
 ```
 
 ### 2. Load and Configure the Model
@@ -36,7 +37,7 @@ dataset = load_dataset("your_conversation_dataset")
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
-model_name = "meta-llama/Llama-2-7b-chat-hf"
+model_name = "NousResearch/Llama-2-7b-chat-hf"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 bnb_config = BitsAndBytesConfig(load_in_4bit=True)
@@ -69,13 +70,4 @@ print(response)
 
 After fine-tuning, the model demonstrates improved conversational capabilities, generating more coherent and contextually relevant responses.
 
-## Acknowledgments
-
-- [Meta's LLaMA 2](https://ai.meta.com/llama/)
-- [Hugging Face Transformers](https://huggingface.co/docs/transformers/index)
-- [TRL Library](https://github.com/huggingface/trl)
-
-## License
-
-This project is licensed under the MIT License.
 
