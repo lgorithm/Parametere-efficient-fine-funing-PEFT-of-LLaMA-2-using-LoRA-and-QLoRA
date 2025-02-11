@@ -12,14 +12,6 @@ This project focuses on fine-tuning Meta's LLaMA 2 model using a conversational 
 - Dataset loading and preprocessing using `datasets` library
 - Training using `SFTTrainer` from `trl`
 
-## Installation
-
-Before running the project, install the necessary dependencies:
-
-```bash
-pip install -q fsspec gcsfs accelerate peft bitsandbytes transformers trl
-```
-
 ## Usage
 
 ### 1. Load the Dataset
